@@ -61,13 +61,85 @@ If you know how to clone a repository from github please do it, If you don’t k
     
     `pytest .\Test\test_Scenario2.py`
     
-    Or only executing the following command we can execute both scenarios
+ 7.  If you want to see a Basic Report, you can excecute the next command
     
-    `pytest`
+     `pytest <scenario_name>.py --html=report.html`
+
+     When you execute this command, in path that you are, you can see a new file with `report.html` name, and if you open with any browser, you will see an image like following:
+    
+<p align="center" width="200%">
+<img width="70%" src="https://i.postimg.cc/SNhG0MbD/Report-image.png">
+</p>
+
+ **Note**
+  If you want to learn more about the pytest reports, go to the https://pypi.org/project/pytest-html/ 
  
- 7.  For to finish we can deactivate the virtual environment
+ 8.  Now We are going to do Behave test, that it was installed with the requirements, executing the following commmand
+
+   `behave .\behave\features\scenario1.feature`
+
+For to test the first scenario or for the second scenario we can execute the following command
+
+   `behave .\behave\features\scenario1.feature`
+
+
+ 10.  For to finish we can deactivate the virtual environment
     `deactivate`
- 
+
+
+### Now, we are going to use the Postman and Jmeter Tools, these tools are normally used for API Test
+
+In this repository, you can find the API Tools folder, inside the folder, you are goin to find two folders more, the first one is JMeter Scenarios and the second one is Postman Scenarios, inside them, there is one file by folder, those files are compatible only with the API tool that contain them. So, you need to download the last version of the Postman and Jmeter for the use them, these tools you can download in the follow links:
+
+https://www.postman.com/downloads/
+
+https://jmeter.apache.org/download_jmeter.cgi
+
+Well each file have two scenarios:
+
+- Scenario 3: User can login
+  
+   Use the following link and builds the corresponding requests to login
+  
+   https://the-internet.herokuapp.com/login
+
+- Scenario 4: User can upload file
+  
+  Use the following link and uploads any file to the webapp
+  
+  https://the-internet.herokuapp.com/upload
+
+  The instrutions to execute or open the files are simple, for JMeter you need to open Test Plan.jmx file and in Postman you need to import the Postman Automation.postman_collection.json file, the Scenario 4  needs that you explore and find one file into your computer, this requirement is necesario to Scenario goal, for that please follow instructions:
+
+## Postman
+
+In Postman you need to replace the exits PATH, like this
+<p align="center" width="200%">
+<img width="60%" src="https://i.postimg.cc/bwnxm7gD/Postman1.png">
+</p>
+
+
+<p align="center" width="200%">
+<img width="60%" src="https://i.postimg.cc/Wpf0TNfq/Postman2.png">
+</p>
+
+
+<p align="center" width="200%">
+<img width="60%" src="https://i.postimg.cc/fTGXSHsw/Postman3.png">
+</p>
+
+After this you can run the test by clicking on the send button.
+
+## JMeter
+
+For JMeter, only you need to change the image PATH, by a full path of an image that exists on your computer
+
+<p align="center" width="200%">
+<img width="60%" src="https://i.postimg.cc/dt62pRcv/JMeter1.png">
+</p>
+
+After this you can run the test by clicking on the play green button
+
 ## Definitions
 
 ### What's POM or Page Object Model?
@@ -129,10 +201,19 @@ Before you needed to download the binary driver, unzip it somewhere on your PC a
 
      driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
    ```
-   
-   **Note**
+ **Note**
    
    If you want to know more about the WebDriver Manager, you can check its documentation [here](https://pypi.org/project/webdriver-manager/).
+
+### What's the BDD paradigm
+   Behaviour Driven Development (BDD) is a synthesis and refinement of practices stemming from Test Driven Development (TDD) and Acceptance Test Driven Development (ATDD). BDD augments TDD and ATDD with the following tactics:
+
+- Apply the “Five Why’s” principle to each proposed user story, so that its purpose is clearly related to business outcomes
+- Thinking “from the outside in”, in other words, implement only those behaviors which contribute most directly to these business outcomes, so as to minimize waste
+- Describe behaviors in a single notation that is directly accessible to domain experts, testers, and developers, so as to improve communication
+- Apply these techniques all the way down to the lowest levels of abstraction of the software, paying particular attention to the distribution of behavior, so that evolution remains cheap
+  
+  
 
 
 ### References
